@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/12/2018 07:18:14 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="agro_asistencia" name="ar.com.agroasistencia.modelo.modeloHibernate.Lotes" optimistic-lock="version" table="lotes">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="ar.com.agroasistencia.modelo.modeloHibernate.AgroCampos" fetch="select" name="agroCampos">
+      <column name="id_campos"/>
+    </many-to-one>
+    <many-to-one class="ar.com.agroasistencia.modelo.modeloHibernate.TiposSuelo" fetch="select" name="tiposSuelo">
+      <column name="tipo_suelo"/>
+    </many-to-one>
+    <property name="nroLote" type="java.lang.Integer">
+      <column name="nro_lote"/>
+    </property>
+    <property name="superficie" type="java.lang.Integer">
+      <column name="superficie"/>
+    </property>
+  </class>
+</hibernate-mapping>
